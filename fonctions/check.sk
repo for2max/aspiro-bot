@@ -14,3 +14,15 @@ function Aspirobot_check_proxy(loc: location):: boolean:
       return false
       stop
   return true
+
+function Aspirobot_espace(id: number,item: item):: boolean:
+  set {_location} to {Aspirobot_%{_id}%::location}
+  set {_block} to block at {_location}
+  set {_inv} to inventory of {_block}
+  if {_inv} has enough space for {_item}:
+    return true
+  else:
+    return false
+
+
+  
