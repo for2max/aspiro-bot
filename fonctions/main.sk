@@ -16,7 +16,7 @@ Aspirobot_main(id: number}:
     if {_return} is true:
       teleport loop-item at {_drop}
     else if {_return} is false:
-      # PLUS D'ESPACE
+      # PLUS D'ENERGIE
       stop
 
 Aspirobot_recharge(id: number,r: number) ::number:
