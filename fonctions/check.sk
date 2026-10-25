@@ -1,0 +1,16 @@
+
+
+function Aspirobot_check_nombre(p: player):: boolean:
+  set {_size} to size of {Aspirobot_%{_p}%::*}
+  set {_max} to {Grade_%{_p}%}*2
+  if {_size} >= {_max}:
+    return false
+  else:
+    return true
+
+function Aspirobot_check_proxy(loc: location):: boolean:
+  loop blocks in radius 10 around {_loc}:
+    if {Aspirobot_%location of loop-block%} is set:
+      return false
+      stop
+  return true
