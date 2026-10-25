@@ -1,5 +1,3 @@
-
-
 function Aspirobot_check_nombre(p: player):: boolean:
   set {_size} to size of {Aspirobot_%{_p}%::*}
   set {_max} to {Grade_%{_p}%}*2
@@ -24,7 +22,7 @@ function Aspirobot_espace(id: number):: boolean:
   else:
     return false
 
-function Aspirobot_energie(id: number}:
+function Aspirobot_energie(id: number) ::boolean:
   set {_bar} to {Aspirobot_%{_id}%::bar}
   set {_energie} to {Aspirobot_%{_id}%::energie}
   set {_lvl} to {Aspirobot_%{_id}%::niveau}
@@ -40,8 +38,3 @@ function Aspirobot_energie(id: number}:
   else:
     remove 1 from {Aspirobot_%{_id}%::energie}
     return true
-
-  
-
-
-  
