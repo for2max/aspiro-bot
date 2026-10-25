@@ -24,5 +24,24 @@ function Aspirobot_espace(id: number,item: item):: boolean:
   else:
     return false
 
+function Aspirobot_energie(id: number}:
+  set {_bar} to {Aspirobot_%{_id}%::bar}
+  set {_energie} to {Aspirobot_%{_id}%::energie}
+  set {_lvl} to {Aspirobot_%{_id}%::niveau}
+
+  if {_bar} <= 0:
+    if {_energie} <= 0:
+      return false
+    else:
+      remove 1 from {Aspirobot_%{_id}%::bar}
+      add 7+(3*{_niveau}) to {Aspirobot_%{_id}%::energie}
+      remove 1 from {Aspirobot_%{_id}%::energie}
+      return true
+  else:
+    remove 1 from {Aspirobot_%{_id}%::energie}
+    return true
+
+  
+
 
   
