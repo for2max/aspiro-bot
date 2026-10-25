@@ -1,4 +1,4 @@
-Aspirobot_main(id: number}:
+function Aspirobot_main(id: number):
 
   set {_return} to Aspirobot_espace({_id})
   if {_return} is false:
@@ -9,17 +9,17 @@ Aspirobot_main(id: number}:
 
   set {_location} to {Aspirobot_%{_id}%}
   set {_drop} to {_location}
-  add +1 to y-coordinate of {_drop}
+  add 1 to y-coordinate of {_drop}
 
-  loop all items in radius {_rayon} around {_loc}:
-    set {_return} to Aspirobot_energie(%{_id}%)
+  loop dropped items in radius {_rayon} around {_loc}:
+    set {_return} to Aspirobot_energie({_id})
     if {_return} is true:
-      teleport loop-item at {_drop}
+      teleport loop-value at {_drop}
     else if {_return} is false:
       # PLUS D'ENERGIE
       stop
 
-Aspirobot_recharge(id: number,r: number) ::number:
+function Aspirobot_recharge(id: number,r: number) ::number:
 
   set {_max} to 64*{Aspirobot_%{_id}%::niveau}
   set {_diff} to difference between {_max} and {Aspirobot_%{_id}%::energie}
@@ -34,11 +34,3 @@ Aspirobot_recharge(id: number,r: number) ::number:
   remove {_final} of redstone from {Aspirobot_%{_id}%::owner}'s inventory
   add {_final} to {Aspirobot_%{_id}%::energie}
   return {_final}
-
-  
-  
-
-  
-    
-    
-    
