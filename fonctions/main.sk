@@ -19,14 +19,13 @@ Aspirobot_main(id: number}:
       # PLUS D'ESPACE
       stop
 
-Aspirobot_recharge(id: number,r: number):
+Aspirobot_recharge(id: number,r: number) ::number:
 
   set {_max} to 64*{Aspirobot_%{_id}%::niveau}
   set {_diff} to difference between {_max} and {Aspirobot_%{_id}%::energie}
 
   if {_diff} <= 0:
-    # ENERGIE COMPLET
-    stop
+    return 0
   if {_r} > {_diff}:
     set {_final} to {_diff}
   else if {_r} < {_diff}:
@@ -34,7 +33,7 @@ Aspirobot_recharge(id: number,r: number):
 
   remove {_final} of redstone from {Aspirobot_%{_id}%::owner}'s inventory
   add {_final} to {Aspirobot_%{_id}%::energie}
-  send "&7[&9Aspiro'&9BOT&7] &eVotre automate a été rechargé de %{_final}% énergie(s)." to {Aspirobot_%{_id}%::owner}
+  return {_final}
 
   
   
